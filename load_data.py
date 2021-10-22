@@ -73,7 +73,6 @@ class Data(object):
         pos_items = []
         neg_items = []
         for u in users:
-            # 改变参数可以调整正样本和负样本的比例
             pos_items += sample_pos_items_for_u(u, 1)
             neg_items += sample_neg_items_for_u(u, 1)
 
