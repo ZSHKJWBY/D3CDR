@@ -12,10 +12,10 @@ test = False
 test_model = 'data/amazon/Book_CD/model_CoNet/-1881'
 
 fusion_size = 3
-model_save_name = "/ADTMR/"
+model_save_name = "/ADTFK/"
 
 
-class ADTMR(object):
+class ADTFK(object):
     def __init__(self, num_users, num_items_1, num_items_2, dim, num_cross_layers, num_whole_layer,
                  layer_dim, beta, lr, activation, fusion_size=2):
         self.num_cross_layers = num_cross_layers
@@ -203,7 +203,7 @@ class ADTMR(object):
                     tf.concat([self.layer_h_neg_2[h - 1], multi_space_h_neg_2], axis=-1),
                     self.attentionWeight2_new[h]), rate=self.keep_prob)))
 
-                #  Fuse the multiple motivation representation with attention weights and achieve the cross-domain knowledge representation
+                #  Fuse the multiple representation with attention weights and achieve the cross-domain knowledge representation
                 PosAtten1 = tf.split(PosAtten1, self.fusion_size, axis=1)
                 after_fusion_h_pos_1 = tf.multiply(PosAtten1[0], each_space_h_pos_1[0])
                 for i in range(1, self.fusion_size):
@@ -321,7 +321,7 @@ class ADTMR(object):
 
 
 if __name__ == '__main__':
-    print('begin to bulid ADTMR model using ' + params.metaName_1 + ' ' + params.metaName_2 + ' data')
+    print('begin to bulid ADTFK model using ' + params.metaName_1 + ' ' + params.metaName_2 + ' data')
     os.environ['CUDA_VISIBLE_DEVICES'] = '1'
     n_users_1, n_items_1, user_ratings_1 = load_data(filepath=params.filepath_1)
     n_users_2, n_items_2, user_ratings_2 = load_data(filepath=params.filepath_2)
@@ -330,7 +330,7 @@ if __name__ == '__main__':
 
     user_ratings_test_1 = generate_test(user_ratings_1)
     user_ratings_test_2 = generate_test(user_ratings_2)
-    model = ADTMR(num_users=n_users_1, num_items_1=n_items_1, num_items_2=n_items_2,
+    model = ADTFK(num_users=n_users_1, num_items_1=n_items_1, num_items_2=n_items_2,
                   num_cross_layers=num_cross, num_whole_layer=4, dim=32, layer_dim=[64, 32, 16, 8, 8], lr=params.LR, beta=0.01,
                   activation='relu', fusion_size=fusion_size)
     config = tf.ConfigProto()
