@@ -1,7 +1,7 @@
 
-# ADTMR
+# ADTFK
 
-Codes for WWW 2022 paper [Attentively Dual Transfer Motivation-Aware Interaction Representation for Cross-Domain Recommendation].
+Codes for WWW 2022 paper [Dual Fine-Grained Knowledge Transfer for Cross-Domain Recommendation].
 
 
 ## Requirement
@@ -12,7 +12,7 @@ Codes for WWW 2022 paper [Attentively Dual Transfer Motivation-Aware Interaction
 
 ## Files in the folder
 - `model/`
-    - `ADTMR.py`: detail implementation of ADTMR, training process and evaluation
+    - `ADTFK.py`: detail implementation of ADTFK, training process and evaluation
 - `data/`: four cross-domain recommendation tasks based on two widely used datasets Amazon and Douban
     - `Amazon/Cell_Elec/`
     - `Amazon/Movie_Music/`
@@ -26,4 +26,4 @@ Codes for WWW 2022 paper [Attentively Dual Transfer Motivation-Aware Interaction
 ## Running the code
 1. Modify the `DATASET`, `metaName_1`, `metaName_2` in `params.py` to set certain cross-domain recommendation task
 
-2. run python ADTMR.py.
+2. run python ADTFK.py.
