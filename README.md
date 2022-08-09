@@ -19,7 +19,6 @@ Recommendation].
     - `Amazon/Movie_Music/`
     - `Douban/Movie_Book/`
     - `Douban/Music_Book/`
-- `load_data.py`: defining the class of datasets
 - `utils.py`: constructing training set and testing set for cross-domain scenario
 - `params.py`: some parameters and directions concerned with the model
 
