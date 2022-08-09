@@ -12,10 +12,10 @@ test = False
 test_model = 'data/amazon/Book_CD/model_CoNet/-1881'
 
 fusion_size = 3
-model_save_name = "/ADTFK/"
+model_save_name = "/D3CDR/"
 
 
-class ADTFK(object):
+class D3CDR(object):
     def __init__(self, num_users, num_items_1, num_items_2, dim, num_cross_layers, num_whole_layer,
                  layer_dim, beta, lr, activation, fusion_size=2):
         self.num_cross_layers = num_cross_layers
@@ -321,7 +321,7 @@ class ADTFK(object):
 
 
 if __name__ == '__main__':
-    print('begin to bulid ADTFK model using ' + params.metaName_1 + ' ' + params.metaName_2 + ' data')
+    print('begin to bulid D3CDR model using ' + params.metaName_1 + ' ' + params.metaName_2 + ' data')
     os.environ['CUDA_VISIBLE_DEVICES'] = '1'
     n_users_1, n_items_1, user_ratings_1 = load_data(filepath=params.filepath_1)
     n_users_2, n_items_2, user_ratings_2 = load_data(filepath=params.filepath_2)
@@ -330,7 +330,7 @@ if __name__ == '__main__':
 
     user_ratings_test_1 = generate_test(user_ratings_1)
     user_ratings_test_2 = generate_test(user_ratings_2)
-    model = ADTFK(num_users=n_users_1, num_items_1=n_items_1, num_items_2=n_items_2,
+    model = D3CDR(num_users=n_users_1, num_items_1=n_items_1, num_items_2=n_items_2,
                   num_cross_layers=num_cross, num_whole_layer=4, dim=32, layer_dim=[64, 32, 16, 8, 8], lr=params.LR, beta=0.01,
                   activation='relu', fusion_size=fusion_size)
     config = tf.ConfigProto()
