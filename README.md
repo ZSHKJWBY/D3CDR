@@ -1,5 +1,5 @@
 
-# ADTFK
+# D3CDR
 
 Codes for WSDM 2023 paper [Dual Disentangled Knowledge Transfer for Cross-Domain
 Recommendation].
