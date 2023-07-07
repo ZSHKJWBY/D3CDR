@@ -1,7 +1,7 @@
 
 # D3CDR
 
-Codes for WSDM 2023 paper [Dual Disentangled Knowledge Transfer for Cross-Domain
+Codes for TKDD paper [Dual Disentangled Knowledge Transfer for Cross-Domain
 Recommendation].
 
 
@@ -13,13 +13,13 @@ Recommendation].
 
 ## Files in the folder
 - `model/`
-    - `D3CDR.py`: detail implementation of ADTFK, training process and evaluation
+    - `D3CDR.py`: detail implementation of D3CDR, training process, and evaluation
 - `data/`: four cross-domain recommendation tasks based on two widely used datasets Amazon and Douban
     - `Amazon/Cell_Elec/`
     - `Amazon/Movie_Music/`
     - `Douban/Movie_Book/`
     - `Douban/Music_Book/`
-- `utils.py`: constructing training set and testing set for cross-domain scenario
+- `utils.py`: constructing training set and testing set for a cross-domain scenario
 - `params.py`: some parameters and directions concerned with the model
 
 
